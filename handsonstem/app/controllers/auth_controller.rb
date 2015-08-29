@@ -20,7 +20,7 @@ class AuthController < ApplicationController
     
     session[:eventbrite_auth_token] = access_token
     if @current_user
-      redirect_to :controller => "home", :action => "index"
+      redirect_to :controller => "workshops", :action => "index"
     else
       redirect_to :controller => "users", :action => "create"
     end

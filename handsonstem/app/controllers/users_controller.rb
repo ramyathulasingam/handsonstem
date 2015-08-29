@@ -26,6 +26,7 @@ class UsersController < ApplicationController
       resp = JSON.parse(response.body)
       @current_user.name = resp["name"]
       puts response.body
+      redirect_to :controller => "workshops", :action => "index"
     else
       return
     end
