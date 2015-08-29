@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'workshops#index'
 
+  get 'workshops/get_data'
+
   
   match "/auth/eventbrite/callback", :to => 'auth#eventbriteCallback', :via => [:get], :as => 'eventbrite_callback'
 

@@ -1,17 +1,12 @@
+<div ng-repeat="item in events | filter: query ">
+  <a href={{item.eventUrl}} class="workshop-links">
 
-                
+  <div class="workshop-card col-lg-4 col-sm-6">
+    <h4>{{item.title}}</h4>
 
-<% @events.each do |i| %>
-  
-  <a href="<%= i.eventUrl%>" class="workshop-links">
-
-	  <div class="workshop-card col-lg-4 col-sm-6">
-	  	<h5> <%= i.title%></h5>
-	    <p> <strong>When</strong>: <%= i.startdate %></p>
-	    <%= image_tag src="#{i.imageSource}", :class => 'images img-responsive fixed-height' %>
-	  </div>
+    <p> When: {{item.startdate }}</p>
+    <img ng-src={{item.imageSource}}>
+  </div>
   </a>
-    
- 
-<%end%>
+</div>
 

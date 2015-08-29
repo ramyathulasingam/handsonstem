@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -30,7 +30,7 @@
     <%= javascript_include_tag "application" %>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   </head>
-  <body>
+  <body ng-controller="SearchController">
     <header>
       <div class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid" id="main-nav">
@@ -57,11 +57,8 @@
       <div class="container-fluid">
         <div class="row search">
           <div class="col-lg-6 col-lg-offset-3">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Your next workshop...">
-              <span class="input-group-btn">
-                <button class="btn btn-default go" type="button">Go!</button>
-              </span>
+            <div class="input-group input-group-btn">
+              <input type="text" name = "query" ng-model="query" class="form-control" placeholder="Your next workshop...">
             </div><!-- /input-group -->
           </div>
         </div>

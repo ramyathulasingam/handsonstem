@@ -13,6 +13,11 @@ class WorkshopsController < ApplicationController
     puts User.find_by_id(session[:current_user_id]).inspect
     @current_user = User.find_by_id(session[:current_user_id]) # Use find_by_id to get nil instead of an error if user doesn't
   end
+
+  def get_data
+    @events = Workshop.get_events
+    render json: @events
+  end
   
   # GET /workshops/:id
   def show

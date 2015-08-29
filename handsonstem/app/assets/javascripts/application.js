@@ -12,6 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+
+
+var myApp = angular.module('myApp', []);
+
+myApp.controller('SearchController', ['$scope', '$http', function($scope, $http) {
+    $http.get('workshops/get_data').success(function(data) {
+    $scope.events = data
+  })
+}]);

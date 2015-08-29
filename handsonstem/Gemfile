@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.10'
@@ -36,6 +36,8 @@ gem 'httparty'
 gem 'spring',        group: :development
 
 gem "twitter-bootstrap-rails"
+
+gem 'rails-assets-angular', '1.4.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
