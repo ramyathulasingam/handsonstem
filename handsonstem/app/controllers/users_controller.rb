@@ -13,15 +13,19 @@ class UsersController < ApplicationController
       @current_user.eventbriteAuthToken = session[:eventbrite_auth_token]
       @current_user.save
       
-      @conn = Faraday.new(:url => 'http://www.eventbriteapi.com/v3') do |faraday|
+      @conn = Faraday.new(:url => 'http://www.eventbriteapi.com') do |faraday|
+        faraday.use FaradayMiddleware::FollowRedirects
+        faraday.headers['Accept'] = 'application/json'
         faraday.request  :url_encoded             # form-encode POST params
         faraday.response :logger                  # log requests to STDOUT
-        faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+        faraday.adapter  :net_http  # make requests with Net::HTTP
       end
       
-      response = @conn.get '/users/me/?token=' + session[:eventbrite_auth_token] + ''
+      response = @conn.get '/v3/users/me/?token=' + session[:eventbrite_auth_token] + ''
       puts "CREATE USER: "
-      puts response
+      resp = JSON.parse(response.body)
+      @current_user.name = resp["name"]
+      puts response.body
     else
       return
     end
