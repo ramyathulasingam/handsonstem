@@ -9,6 +9,7 @@ class WorkshopsController < ApplicationController
 
   def index
     @events = Workshop.get_events
+    @current_user = User.find_by_id(session[:current_user_id]) # Use find_by_id to get nil instead of an error if user doesn't
   end
 
   def get_data
