@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -43,9 +42,12 @@
           <a class="navbar-brand" href="/">HandsonSTEM</a>
           <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav pull-right">
-              <li><%= link_to "Sign up", "/path1"  %></li>
-              <li><%= link_to "Log in", "/path2"  %></li>
-              <li><%= link_to "About", "/path3"  %></li>
+              <li>
+                <% if @current_user != nil %>
+                   <a> <%= @current_user.name %> </a>
+                <% end %>
+                </li>
+              <li><%= link_to "Login", {:controller => :login, :action => 'login' }, :method => :get  %></li>
             </ul>
           </div>
         </div>

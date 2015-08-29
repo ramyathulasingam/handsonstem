@@ -25,7 +25,12 @@ class UsersController < ApplicationController
       puts "CREATE USER: "
       resp = JSON.parse(response.body)
       @current_user.name = resp["name"]
+      @current_user.save
       puts response.body
+      
+      session[:current_user_id] = @current_user.id
+      puts @current_user
+      
       redirect_to :controller => "workshops", :action => "index"
     else
       return
