@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  imageSource: MyString
+  price: 1
+  date: 2015-08-28 21:37:43
+  registerby: 2015-08-28 21:37:43
+
+two:
+  title: MyString
+  imageSource: MyString
+  price: 1
+  date: 2015-08-28 21:37:43
+  registerby: 2015-08-28 21:37:43
