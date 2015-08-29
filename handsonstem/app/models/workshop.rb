@@ -10,7 +10,7 @@ class Workshop < ActiveRecord::Base
       faraday.response :logger                  # log requests to STDOUT
       faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
     end
-    response = conn.get 'events/search/', { :popular => 'yes', :token => "M55UU6OIXPE27JH2RGCX"}
+    response = conn.get 'events/search/', { :popular => 'yes', :q => 'workshop',:sort_by => 'best', 'location.address' => 'California', :categories => 102, :token => "M55UU6OIXPE27JH2RGCX"}
     self.build_from_response(JSON.parse(response.body))
   end
 
