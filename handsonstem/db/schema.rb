@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829080638) do
+ActiveRecord::Schema.define(version: 20150829080856) do
 
   create_table "workshops", force: true do |t|
     t.string   "title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150829080638) do
     t.string   "description"
     t.datetime "startdate"
     t.datetime "enddate"
+    t.string   "status"
   end
 
 end
