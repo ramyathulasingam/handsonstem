@@ -48,6 +48,7 @@
           </div>
         </div>
       </div>
+<<<<<<< Updated upstream
     </header>
     <section>
       <div class="container-fluid">
@@ -60,6 +61,17 @@
               </span>
             </div><!-- /input-group -->
           </div>
+=======
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= bootstrap_flash %>
+          <%= yield %>
+          <%= button_to "Login", {:controller => :login,
+                :action => 'login' }, :method => :get %>
+>>>>>>> Stashed changes
         </div>
       </div>
     </section>

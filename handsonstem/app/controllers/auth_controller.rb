@@ -19,6 +19,10 @@ class AuthController < ApplicationController
     puts access_token
     
     session[:eventbrite_auth_token] = access_token
-    redirect_to :controller => "home", :action => "index"
+    if @current_user
+      redirect_to :controller => "home", :action => "index"
+    else
+      redirect_to :controller => "users", :action => "create"
+    end
   end
 end
