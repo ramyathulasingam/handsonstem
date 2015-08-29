@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   get 'login/login'
   
   resources :workshops
+  resources :users
   
-  resources :workshops
-
 end

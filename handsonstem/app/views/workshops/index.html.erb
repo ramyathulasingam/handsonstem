@@ -1,3 +1,15 @@
+    <section>
+      <div class="container-fluid">
+        <div class="row search">
+          <div class="col-lg-6 col-lg-offset-3">
+            <div class="input-group input-group-btn">
+              <input type="text" name = "query" ng-model="query" class="form-control" placeholder="Your next workshop...">
+            </div><!-- /input-group -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
 <div ng-repeat="item in events | filter: query ">
   <a href={{item.eventUrl}} class="workshop-links">
       <div class="workshop-card col-md-4">
@@ -14,4 +26,5 @@
       </div>
       </div>
   </a>
+</div>
 </div>
