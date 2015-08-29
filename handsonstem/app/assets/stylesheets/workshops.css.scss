@@ -1,3 +1,49 @@
 // Place all the styles related to the Workshops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+#main-nav {
+  background-color: #f05f40;
+}
+
+.navbar-default .navbar-nav>li>a{
+  text-transform: uppercase;
+
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a{
+  color: white;
+}
+
+.search{
+  margin: 100px 0 50px 0;
+}
+
+.workshop {
+  width: 100%;
+  position: relative;
+}
+
+.workshop-card {
+  padding: 50px;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.workshop-card .images{
+  display:block;
+  margin:auto;
+}
+
+
+.footer-copyright{
+  margin-top: 50px;
+  padding: 50px;
+
+}

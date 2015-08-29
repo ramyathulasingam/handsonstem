@@ -9,7 +9,7 @@ class WorkshopsController < ApplicationController
   end
 
   def index
-    events = Workshop.get_events
+    @events = Workshop.get_events
   end
   
   # GET /workshops/:id
