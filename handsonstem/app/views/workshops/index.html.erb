@@ -1,8 +1,11 @@
+<%= link_to 'Call Action', import_workshop_path(@import_event), method: :get %>
+
 <div ng-repeat="item in events | filter: query ">
   <a href={{item.eventUrl}} class="workshop-links">
 
   <div class="workshop-card col-lg-4 col-sm-6">
     <h4>{{item.title}}</h4>
+                
 
     <p> When: {{item.startdate }}</p>
     <img ng-src={{item.imageSource}}>

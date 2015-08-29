@@ -23,5 +23,11 @@ Rails.application.routes.draw do
   get 'login/login'
   
   resources :workshops
+  
+  resources :workshops do
+    member do
+      get 'import'
+    end
+  end
 
 end

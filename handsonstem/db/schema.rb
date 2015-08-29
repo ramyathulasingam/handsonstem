@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 201508290815301) do
     t.datetime "enddate"
     t.string   "status"
     t.string   "eventUrl"
+    t.string   "skills_taught"
+    t.string   "equiptment_needed"
+    t.integer  "friendliness"
   end
 
 end
