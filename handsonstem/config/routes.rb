@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'workshops/get_data'
 
+  post 'workshops/import'
+
   
   match "/auth/eventbrite/callback", :to => 'auth#eventbriteCallback', :via => [:get], :as => 'eventbrite_callback'
 
@@ -24,10 +26,6 @@ Rails.application.routes.draw do
   
   resources :workshops
   
-  resources :workshops do
-    member do
-      get 'import'
-    end
-  end
+  resources :workshops
 
 end
