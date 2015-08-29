@@ -22,7 +22,35 @@
 var myApp = angular.module('myApp', []);
 
 myApp.controller('SearchController', ['$scope', '$http', function($scope, $http) {
+    
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex ;
+      
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+        if (randomIndex % 1 === 0) {
+            array[randomIndex].friendliness = ((Math.random() % 100) * 100).toFixed(0);
+        }
+      }
+
+      return array;
+    }
+    
     $http.get('workshops/get_data').success(function(data) {
-    $scope.events = data
-  })
+        $scope.events = data;
+        $scope.events = shuffle($scope.events);
+    });
+  
+  
+
 }]);

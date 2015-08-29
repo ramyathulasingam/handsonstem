@@ -8,7 +8,7 @@
           <img ng-src={{item.imageSource}}>
         </div>
         <div class="info">
-        <span>Friendliness Rating: {{ item.friendliness ? item.friendliness + '%' : 'No data available yet!' }}</span><br>
+        <span ng-class="item.friendliness > 60 ? 'friendly-class' : ''">Friendliness Rating: {{ item.friendliness ? item.friendliness + '%' : 'No data available yet!' }}</span><br>
         <span>Skills taught: {{ item.skills_taught ?  item.skills_taught : 'No data available yet!' }}</span><br>
         <span>Equiptment Needed: {{ item.equiptment_needed ? item.equiptment_needed : 'No data available yet!' }}</span>
       </div>
