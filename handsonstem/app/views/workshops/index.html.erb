@@ -1,15 +1,17 @@
 <div ng-repeat="item in events | filter: query ">
   <a href={{item.eventUrl}} class="workshop-links">
+      <div class="workshop-card col-md-4">
+        <h4>{{item.title}}</h4>
 
-  <div class="workshop-card col-lg-4 col-sm-6">
-    <h4>{{item.title}}</h4>
-
-    <p> When: {{item.startdate | date}}</p>
-    <img ng-src={{item.imageSource}}>
-  </div>
+        <p> When: {{item.startdate | date}}</p>
+        <div class="image-block">
+          <img ng-src={{item.imageSource}}>
+        </div>
+        <div class="info">
+        <span>Friendliness Rating: {{ item.friendliness ? item.friendliness + '%' : 'No data available yet!' }}</span><br>
+        <span>Skills taught: {{ item.skills_taught ?  item.skills_taught : 'No data available yet!' }}</span><br>
+        <span>Equiptment Needed: {{ item.equiptment_needed ? item.equiptment_needed : 'No data available yet!' }}</span>
+      </div>
+      </div>
   </a>
 </div>
-
-
-
-

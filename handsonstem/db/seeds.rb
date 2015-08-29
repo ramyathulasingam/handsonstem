@@ -8,6 +8,9 @@
 
 workshop = Workshop.create([{ title: 'Bianca',
                          imageSource: 'https://s3-us-west-2.amazonaws.com/questr/images/459895765.107559.jpg',
-                         date: 2.days.ago,
-                         registerby: 2.days.ago,
-                         price: 100 }])
+                         startdate: 2.days.ago,
+                         enddate: 2.days.ago,
+                         price: 100,
+                         friendliness: 98
+                         skills_taught: "Android, Java"                         
+                          }])
