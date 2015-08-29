@@ -6,9 +6,15 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: 'home#index'
+  
+  match "/auth/eventbrite/callback", :to => 'auth#eventbriteCallback', :via => [:get], :as => 'eventbrite_callback'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get '/auth/eventbrite', to: redirect('https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=LM35T2HNQKLMFV5WVQ')
+  
+  get '/auth/eventbrite/callback', to: redirect('https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=LM35T2HNQKLMFV5WVQ')  
+  
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

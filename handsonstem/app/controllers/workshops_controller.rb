@@ -11,4 +11,8 @@ class WorkshopsController < ApplicationController
   def show
     @workshop = Workshop.find(params[:id])
   end
+  
+  def callback
+    puts request.body.read
+  end
 end
