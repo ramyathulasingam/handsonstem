@@ -9,22 +9,27 @@
         </div>
       </div>
     </section>
-    <div class="container">
-<div ng-repeat="item in events | filter: query ">
-  <a href={{item.eventUrl}} class="workshop-links">
+<div ng-repeat="item in events | filter: query " class='card-height'>
       <div class="workshop-card col-md-4">
-        <h4>{{item.title}}</h4>
+        <div class="title" style="height: 80px;">
+          <a href={{item.eventUrl}} class="workshop-links">
+            <h4>{{item.title}}</h4>
+          </a>
 
-        <p> When: {{item.startdate | date}}</p>
-        <div class="image-block">
-          <img ng-src={{item.imageSource}}>
+
+          <p> When: {{item.startdate | date}}</p>
+      </div>
+        <div class="image-block" style='background-image: url({{ item.imageSource ? item.imageSource : "http://www.dickson-constant.com/medias/images/catalogue/api/m654-grey-680.jpg" }})'>
         </div>
         <div class="info">
-        <span ng-class="item.friendliness > 60 ? 'friendly-class' : ''">Friendliness Rating: {{ item.friendliness ? item.friendliness + '%' : 'No data available yet!' }}</span><br>
-        <span>Skills taught: {{ item.skills_taught ?  item.skills_taught : 'No data available yet!' }}</span><br>
-        <span>Equiptment Needed: {{ item.equiptment_needed ? item.equiptment_needed : 'No data available yet!' }}</span>
+          <span ng-class="item.friendliness > 60 ? 'friendly-class' : ''">Female Friendliness: {{ item.friendliness ? '+' + item.friendliness : 'No data available yet!' }}</span><br>
+          <span>Skills taught: {{ item.skills_taught ?  item.skills_taught : 'No data available yet!' }}</span><br>
+          <span>Equiptment Needed: {{ item.equiptment_needed ? item.equiptment_needed : 'No data available yet!' }}</span>
+          <div style="text-align: right; margin-bottom: 10px; position: absolute; bottom: 0; right: 10px;">
+            <button type="button" class="btn btn-default btn-sm" ng-click='likeItem(item); $event.preventDefault();' ng-class="item.liked ? 'pink' : ''">
+              <i class='fa' ng-class="item.liked ? 'fa-heart' : 'fa-heart-o'"></i>  {{ item.liked ? 'Rated' : '+1 Friendliness' }}
+            </button>
+          </div>
       </div>
       </div>
-  </a>
-</div>
 </div>

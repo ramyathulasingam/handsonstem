@@ -30,8 +30,10 @@
     <%= javascript_include_tag "application" %>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">/</link>
+    <script src="/assets/jquery.matchHeight.js"></script>
+    
   </head>
-  <body ng-controller="SearchController">
+  <body ng-controller="SearchController" ng-cloak>
     <header>
       <div class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid" id="main-nav">

@@ -49,7 +49,19 @@ myApp.controller('SearchController', ['$scope', '$http', function($scope, $http)
     $http.get('workshops/get_data').success(function(data) {
         $scope.events = data;
         $scope.events = shuffle($scope.events);
+        $('.card-height').matchHeight();
     });
+    
+    $scope.likeItem = function(item) {
+        if (item.liked) {
+            item.friendliness = Math.floor(item.friendliness) - 1; 
+        } else {
+            item.friendliness = Math.floor(item.friendliness) + 1; 
+        }
+        item.liked = !item.liked;
+        
+
+    }
   
   
 

@@ -9,6 +9,10 @@ body{
   background-color: #f05f40;
 }
 
+.btn-sm {
+  min-width: 120px;
+}
+
 .navbar-default .navbar-nav>li>a{
   text-transform: uppercase;
 
@@ -21,6 +25,12 @@ body{
 .friendly-class {
   color: #0E9427;
   font-weight: bold;
+}
+
+.pink {
+  background-color: #D66666;
+  border-color: #D66666;
+  color: #FFF;
 }
 
 .search{
@@ -44,14 +54,21 @@ body{
   padding: 10px 50px;
   border: 1px solid #EEE;
   border-radius: 5px;
-  height: 400px;
   overflow: hidden;
+  height: 450px;
+  display: inline-block;
 }
 
 .workshop-card .image-block {
   text-align: center;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-position: 50% 50%;
   
   img {
+    vertical-align: middle;
     max-width: 100%;
     max-height: 200px;
   }
@@ -66,7 +83,6 @@ body{
 .workshop-card .images {
   display:block;
   margin:auto;
-  
   max-width: 100%;
 }
 
