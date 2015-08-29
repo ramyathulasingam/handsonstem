@@ -61,6 +61,8 @@
         <div class="col-lg-9">
           <%= bootstrap_flash %>
           <%= yield %>
+          <%= button_to "delete", {:controller => :login,
+                :action => 'login' }, :method => :get %>
         </div>
         <div class="col-lg-3">
           <div class="well sidebar-nav">
