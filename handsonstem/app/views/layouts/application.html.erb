@@ -48,7 +48,16 @@
                    <a> <%= @current_user.name %> </a>
                 <% end %>
                 </li>
-              <li><%= link_to "Login", {:controller => :login, :action => 'login' }, :method => :get  %></li>
+                <li>
+                  <% if @current_user == nil %>
+                     <%= link_to "Login", {:controller => :login, :action => 'login' }, :method => :get  %>
+                  <% end %>
+                  </li>
+              <li>
+                <% if @current_user != nil %>
+                   <a>Log Out</a>
+                <% end %>
+              </li>
             </ul>
           </div>
         </div>
