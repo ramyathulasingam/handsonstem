@@ -8,9 +8,6 @@
 
 workshop = Workshop.create([{ title: 'Bianca',
                          imageSource: 'https://s3-us-west-2.amazonaws.com/questr/images/459895765.107559.jpg',
-                         email: 'bianca.olaes@gmail.com',
-                         password: 'hello123',
-                         is_employer: false,
-                         position_title: 'Administrative Assistant',
-                         zip_code: '92626',
-                         description: "MS Word, Docs, Powerpoint,Office,Excel, Bachelor's in Psychology.  Customer service, sales and secretarial skills. General Office duties. 2yrs experience." },
+                         date: 2.days.ago,
+                         registerby: 2.days.ago,
+                         price: 100 }])
