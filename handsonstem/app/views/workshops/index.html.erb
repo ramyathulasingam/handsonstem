@@ -1,0 +1,8 @@
+<% @events.each do |i| %>
+  <div class="workshop-card col-lg-4 col-sm-6">
+    <h4> <%= i.title%></h4>
+    <p> When: <%= i.startdate %></p>
+    <%= image_tag src="#{i.imageSource}", :class => 'images img-responsive fixed-height' %>
+  </div>
+<%end%>
+
