@@ -1,9 +1,8 @@
-# handsonstem
 one stop shop for Stem workshops
 
 There are many ways to inspire more females to join the STEM field. One of these ways is to increase the amount of females getting exposed to the joys and the cool concepts of STEM. To do that, we need more easily searchable workshops that effectively attract and inspire female participants to explore the STEM field. We created this application based on hurdles we experienced first-hand and we sincerely hope that we can inspire more females to join the STEM field as a result at best, and expose more interested participants to STEM at the very least.
 
-#### Ruby Version:
+#### Ruby Version
 
 Ruby 2.0
 
